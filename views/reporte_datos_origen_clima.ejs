@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        
+        <style>
+        @font-face {font-family: "Calibri";
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot");
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot?#iefix") format("embedded-opentype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff2") format("woff2"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff") format("woff"), 
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.ttf") format("truetype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.svg#Calibri") format("svg");
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0in;
+            margin: 0in;
+            font-family: Calibri !important;
+        }
+        .pantallainicial {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa.png");
+            background-size: cover;
+        }
+        .pantalla {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa_pantallas.png");
+            background-size: cover;
+        }
+        .titulo-inicial {
+            color: #FFF !important;
+            
+        }
+        .titulo-exclusivo {
+            color: #FFF !important;
+            
+        }
+        .titulo {
+            color: #ed7d31 !important;
+        }
+        .fondo {
+            position: relative;
+            background-color: #f5f5f5 !important;
+            width: 94% !important;
+            height: 85% !important;
+        }
+        .parrafo {
+            background-color: #FFF;
+        }
+
+        .contenedor {
+            display: table;
+        }
+
+        .contenidos {
+            display: table-row;
+        }
+
+        .columnas {
+            display: table-cell;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <div class="pantallainicial">
+            <p style="left: 25%; top: 56%;" class="absolute titulo-inicial text-3xl ">REPORTE DATOS ORIGEN CLIMA LABORAL</p>
+            <p class="absolute titulo-exclusivo left-60 text-lg bottom-36">EXCLUSIVO PARA:</p>
+            <img width="160px" style="top: 84%;" class="absolute left-56" src="<%= host %>/<%= filepath %>" alt="">
+        </div>
+        <% datos.forEach(function(individual,index){ %>
+            <% individual.data.forEach(function(urlgrafico,indexGrafico){ %>
+                <div class="pantalla">
+                    <% if (index == 0 && indexGrafico == 0) { %>
+                        <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>4.- RESUMEN INDIVIDUAL POR ÁREA:</strong></p>
+                    <% } %> 
+                    <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                        <% if (indexGrafico == 0) { %>
+                            <strong class="text-xl"><%= individual.area %></strong>
+                        <% } %> 
+                        <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= urlgrafico.dataPerfilMotivacional %>" alt="">
+                        <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= urlgrafico.dataFactoresHigienicos %>" alt="">
+                    </div>
+                </div>
+                <div class="pantalla">
+                    <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                        <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= urlgrafico.dataFactoresMotivacionales %>" alt="">
+                    </div>
+                </div>
+            <% }); %>
+        <% }); %>
+        
+        
+    </body>
+</html>

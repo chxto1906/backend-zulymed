@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        
+        <style>
+        @font-face {font-family: "Calibri";
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot");
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot?#iefix") format("embedded-opentype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff2") format("woff2"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff") format("woff"), 
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.ttf") format("truetype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.svg#Calibri") format("svg");
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0in;
+            margin: 0in;
+            font-family: Calibri !important;
+        }
+        .pantallainicial {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa.png");
+            background-size: cover;
+        }
+        .pantalla {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa_pantallas.png");
+            background-size: cover;
+        }
+        .titulo-inicial {
+            color: #FFF !important;
+            
+        }
+        .titulo-exclusivo {
+            color: #FFF !important;
+            
+        }
+        .titulo {
+            color: #ed7d31 !important;
+        }
+        .fondo {
+            position: relative;
+            background-color: #f5f5f5 !important;
+            width: 94% !important;
+            height: 85% !important;
+        }
+        .parrafo {
+            background-color: #FFF;
+        }
+
+        .contenedor {
+            display: table;
+        }
+
+        .contenidos {
+            display: table-row;
+        }
+
+        .columnas {
+            display: table-cell;
+        }
+
+        .title-head {
+            color: #FFFFFF;
+            background-color: #265b86;
+            height: 10px;
+            font-size: 9px;
+            font-weight: bold;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .rows-body {
+            text-align: center; 
+            font-size: 9px;
+            margin-top: -11px;
+            padding: 2px;
+            height: 20px;
+            margin-right: 1px;;
+        }
+        .table-zebra {
+            border: 1px solid #373737;
+            border-collapse: collapse;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <div class="pantallainicial">
+            <p style="left: 19%; top: 56%;" class="absolute titulo-inicial text-3xl ">REPORTE CUESTIONARIO SBC-19</p>
+            <p class="absolute titulo-exclusivo left-60 text-lg bottom-36">EXCLUSIVO PARA:</p>
+            <img width="160px" style="top: 84%;" class="absolute left-56" src="<%= host %>/<%= filepath %>" alt="">
+        </div>
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>1.- INFORMACIÓN GENERAL:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <strong class="text-lg">ACERCA DEL CUESTIONARIO:</strong>
+                    </div>
+                    <div class="rounded-lg parrafo m-2 p-4">
+                      <p class="text-xs text-justify" style="color: #3e3e3e;">
+                        El Cuestionario SBC-19 fue creado a raíz de la pandemia producida por el Covid-19, puesto que, se vio la necesidad de contar con un instrumento que sirva como apoyo para el Área de Talento Humano de las diferentes empresas y que sirva como una guía para analizar la incidencia de la nueva normalidad en el ambiente laboral que se vive dentro de las Organizaciones. 
+                      </p>
+                    </div>
+                    <div class="rounded-lg parrafo m-2 p-4">
+                      <p class="text-xs text-justify" style="color: #3e3e3e;">
+                        El objetivo de este cuestionario es explorar las diferentes dimensiones que pueden incidir en la satisfacción, el bienestar psicológico y por ende en el compromiso de las personas con su Empresa. De esta manera, al tener un diagnóstico claro, los encargados de Talento Humano podrán iniciar acciones preventivas o correctivas que permitan mejorar la adaptación de las personas a su Organización en estos tiempos de crisis. 
+                      </p>
+                    </div>
+                    <div class="rounded-lg parrafo m-2 p-4">
+                      <strong class="text-lg">Dimensiones y Subdimensiones evaluadas:</strong>
+                    </div>
+                    <div class="rounded-lg parrafo m-2 p-4">
+                      <p class="text-xs text-justify" style="color: #3e3e3e;">
+                        La herramienta evalúa tres dimensiones macro que engloban, a su vez, a las diferentes subdimensiones que fueron medidas a través de las preguntas del cuestionario.
+                      </p>
+                    </div>
+                    <div class="rounded-lg parrafo m-2 p-2">
+                      <img class="ml-2" width="75%" src="<%= host %>/public/graficos/postcovid/graficobienestar.png" alt="">
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="pantalla">
+          <div class="absolute top-24 left-4 fondo">
+            <div class="grid grid-cols-12 gap-12 p-2">
+              <div class="rounded-lg parrafo m-2 p-4">
+                  <strong class="text-lg">ACERCA DEL REPORTE:</strong>
+              </div>
+              <div class="rounded-lg parrafo m-2 p-4">
+                <strong class="text-lg">Tipos de resultados</strong>
+                <br><br>
+                <p class="text-sm text-justify" style="color: #3e3e3e;">
+                  El reporte, a continuación, está conformado por los siguientes resultados:
+                </p>
+                <br>
+                <p class="text-xs text-justify" style="color: #3e3e3e;">
+                  <u>Informativos</u>: Muestra las características de los participantes (Género, Rango de edad y Área de trabajo)
+                </p>
+                <p class="text-xs text-justify" style="color: #3e3e3e;">
+                  <u>Generales</u>: Muestra los resultados de toda la Organización en las Dimensiones de Satisfacción, Bienestar Psicológico y Compromiso.
+                </p>
+                <p class="text-xs text-justify" style="color: #3e3e3e;">
+                  <u>Subdimensiones</u>: Muestra los resultados de las Subdimensiones de Satisfacción y Compromiso en las diferentes áreas o departamentos, según el género y la edad.
+                </p>
+                <p class="text-xs text-justify" style="color: #3e3e3e;">
+                  <u>Individuales</u>: Muestra los resultados de la Subdimensión de Bienestar Psicológico de todos los participantes del estudio de cada una de las áreas.
+                </p>
+              </div>
+              <div class="rounded-lg parrafo m-2 p-4">
+                <strong class="text-lg">Interpretación de resultados</strong>
+                <br>
+                <div class="rounded-lg parrafo pl-4 pt-2 pb-1 mr-3 ml-1">
+                  <table class="table-zebra" style="width: 100%;">
+                    <tbody>
+                      <tr class="p-0 rows-zebra">
+                        <td class="rows-body table-zebra" style="width: 4%; padding-left: 2px !important;">
+                            <div style="border-radius: 2px; width: 40px; height: 40px; background-color: <%= semaforo.excelente.color %>"></div>
+                        </td>
+                        <td style="width: 36%;" class="pl-3 rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.excelente.desde %>% - <%= semaforo.excelente.hasta %>% </span>
+                        </td>
+                        <td style="width: 36%;" class="rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.excelente.label %></span>
+                        </td>
+                      </tr>
+                      <tr class="p-0 rows-zebra">
+                        <td class="rows-body table-zebra " style="width: 4%;padding-left: 2px !important;">
+                            <div style="border-radius: 2px; width: 40px; height: 40px; background-color: <%= semaforo.medio_alto.color %>"></div>
+                        </td>
+                        <td style="width: 36%;" class="pl-3 rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.medio_alto.desde %>% - <%= semaforo.medio_alto.hasta %>%   </span>
+                        </td>
+                        <td style="width: 36%;" class="rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.medio_alto.label %></span>
+                        </td>
+                      </tr>
+                      <tr class="p-0 rows-zebra">
+                        <td class="rows-body table-zebra " style="width: 4%;padding-left: 2px !important;">
+                            <div style="border-radius: 2px; width: 40px; height: 40px; background-color: <%= semaforo.normal.color %>"></div>
+                        </td>
+                        <td style="width: 36%;" class="pl-3 rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.normal.desde %>% - <%= semaforo.normal.hasta %>%   </span>
+                        </td>
+                        <td style="width: 36%;" class="rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.normal.label %></span>
+                        </td>
+                      </tr>
+                      <tr class="p-0 rows-zebra">
+                        <td class="rows-body table-zebra " style="width: 4%;padding-left: 2px !important;">
+                            <div style="border-radius: 2px; width: 40px; height: 40px; background-color: <%= semaforo.medio_bajo.color %>"></div>
+                        </td>
+                        <td style="width: 36%;" class="pl-3 rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.medio_bajo.desde %>% - <%= semaforo.medio_bajo.hasta %>%</span>
+                        </td>
+                        <td style="width: 36%;" class="rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.medio_bajo.label %></span>
+                        </td>
+                      </tr>
+                      <tr class="p-0 rows-zebra">
+                        <td class="rows-body table-zebra " style="width: 4%;padding-left: 2px !important;">
+                            <div style="border-radius: 2px; width: 40px; height: 40px; background-color: <%= semaforo.emergencia.color %>"></div>
+                        </td>
+                        <td style="width: 36%;" class="pl-3 rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.emergencia.desde %>% - <%= semaforo.emergencia.hasta %>%</span>
+                        </td>
+                        <td style="width: 36%;" class="rows-body table-zebra">
+                            <span class="text-sm mt-0"><%= semaforo.emergencia.label %></span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>2.- RESULTADOS INFORMATIVOS:</strong></p>
+            <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                <p class="font-bold ml-4">Gráfico No. 1: Participantes por género</p>
+                <img class="rounded-lg ml-4" width="88%" src="<%= host %>/<%= datosPorGruposGenero %>" alt="">
+                <p class="font-bold ml-4">Gráfico No. 2: Participantes por área</p>
+                <img class="rounded-lg ml-4" width="88%" src="<%= host %>/<%= datosPorGruposAreas %>" alt="">
+            </div>
+        </div>
+
+        <div class="pantalla">
+          <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong></strong></p>
+          <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+              <p class="font-bold ml-4">Gráfico No. 3: Participantes por rango de edad</p>
+              <img class="rounded-lg ml-4" width="89%" src="<%= host %>/<%= datosPorGruposEdad %>" alt="">
+              
+          </div>
+        </div>
+        <div class="pantalla">
+          <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>3.- RESULTADOS GENERALES:</strong></p>
+          <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+            <div class="w-full contenedor">
+              <div class="w-full contenidos">
+                <div class="w-1/2 columnas">
+                    <strong class="text-sm">Resumen General Satisfacción</strong>
+                    <div class="rounded-lg parrafo pl-2 mr-3 ml-1">
+                        <br/>
+                        <strong class="text-sm pl-12 pt-6">Promedio de la compañía</strong>
+                        <br/><br/>
+                        <strong class="text-4xl pl-16 total_compania" style="color:<%= satisfaccion.promedio.color %>"><%= satisfaccion.promedio.porcentaje %> %</strong>
+                        <br/>
+                        <strong class="text-base pl-10">Resultado <%= satisfaccion.promedio.label %></strong>
+                        <br/><br/>
+                    </div>
+                </div>
+                <div class="w-1/2 columnas">
+                  <strong class="text-sm">Semáforo</strong>
+                  <div class="rounded-lg parrafo pl-4 pt-2 pb-1 mr-3 ml-1">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                              <div style="border-radius: 2px; width: 20px; height: 20px; background-color: <%= semaforo.excelente.color %>"></div>
+                          </td>
+                          <td class="pl-3">
+                              <span class="text-sm mt-0"><%= semaforo.excelente.desde %>% - <%= semaforo.excelente.hasta %>% </span>
+                          </td>
+                          <td>
+                              <span class="text-sm mt-0"><%= semaforo.excelente.label %></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <div style="border-radius: 2px; width: 20px; height: 20px; background-color: <%= semaforo.medio_alto.color %>"></div>
+                          </td>
+                          <td class="pl-3">
+                              <span class="text-sm mt-0"><%= semaforo.medio_alto.desde %>% - <%= semaforo.medio_alto.hasta %>%   </span>
+                          </td>
+                          <td>
+                              <span class="text-sm mt-0"><%= semaforo.medio_alto.label %></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <div style="border-radius: 2px; width: 20px; height: 20px; background-color: <%= semaforo.normal.color %>"></div>
+                          </td>
+                          <td class="pl-3">
+                              <span class="text-sm mt-0"><%= semaforo.normal.desde %>% - <%= semaforo.normal.hasta %>%   </span>
+                          </td>
+                          <td>
+                              <span class="text-sm mt-0"><%= semaforo.normal.label %></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <div style="border-radius: 2px; width: 20px; height: 20px; background-color: <%= semaforo.medio_bajo.color %>"></div>
+                          </td>
+                          <td class="pl-3">
+                              <span class="text-sm mt-0"><%= semaforo.medio_bajo.desde %>% - <%= semaforo.medio_bajo.hasta %>%</span>
+                          </td>
+                          <td>
+                              <span class="text-sm mt-0"><%= semaforo.medio_bajo.label %></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <div style="border-radius: 2px; width: 20px; height: 20px; background-color: <%= semaforo.emergencia.color %>"></div>
+                          </td>
+                          <td class="pl-3">
+                              <span class="text-sm mt-0"><%= semaforo.emergencia.desde %>% - <%= semaforo.emergencia.hasta %>%</span>
+                          </td>
+                          <td>
+                              <span class="text-sm mt-0"><%= semaforo.emergencia.label %></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br/><br/>
+            <div class="w-full contenedor">
+              <div class="w-full contenidos">
+                <div class="w-1/2 columnas">
+                  <strong class="text-sm">Resumen General Bienestar Psicológico</strong>
+                  <div class="rounded-lg parrafo pl-2 mr-3 ml-1">
+                      <strong class="text-sm pl-12 pt-6">Promedio de la compañía</strong>
+                      <br/><br/>
+                      <strong class="text-4xl pl-16 total_compania" style="color:<%= bienestar.promedio.color %>"><%= bienestar.promedio.porcentaje %> %</strong>
+                      <br/>
+                      <strong class="text-base pl-10">Resultado <%= bienestar.promedio.label %></strong>
+                      <br/><br/>
+                  </div>
+                </div>
+                <div class="w-1/2 columnas">
+                  <strong class="text-sm">Resumen General Compromiso</strong>
+                  <div class="rounded-lg parrafo pl-2 mr-3 ml-1">
+                      <strong class="text-sm pl-12 pt-6">Promedio de la compañía</strong>
+                      <br/><br/>
+                      <strong class="text-4xl pl-16 total_compania" style="color:<%= compromiso.promedio.color %>"><%= compromiso.promedio.porcentaje %> %</strong>
+                      <br/>
+                      <strong class="text-base pl-10">Resultado <%= compromiso.promedio.label %></strong>
+                      <br/><br/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <% subdimensionesSatisfaccion.forEach(function(subdimension,index){ %>
+          <div class="pantalla">
+              <% if (index == 0) { %>
+                  <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>4.- RESULTADOS POR SUBDIMENSIONES:</strong></p>
+              <% } %> 
+              <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                  <% if (index == 0) { %>
+                    <p class="font-bold ml-4 titulo">SUBDIMENSIONES DE SATISFACCIÓN:</p>
+                  <% } %> 
+                  <img class="rounded-lg ml-32 text-center" width="55%" src="<%= host %>/<%= subdimension.promedio %>" alt="">
+                  <div class="rounded-lg parrafo m-1 p-4">
+                    <p class="text-xs text-justify" style="color: #3e3e3e;">
+                      <%= subdimension.texto %>
+                    </p>
+                  </div>
+                  <img class="rounded-lg ml-6" width="88%" src="<%= host %>/<%= subdimension.areas %>" alt="">
+              </div>
+          </div>
+          <div class="pantalla">
+              <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                <img class="rounded-lg m-1" width="89%" src="<%= host %>/<%= subdimension.generos %>" alt="">
+                <img class="rounded-lg m-1" width="89%" src="<%= host %>/<%= subdimension.edades   %>" alt="">
+              </div>
+          </div>
+        <% }); %>
+
+        <% subdimensionesCompromiso.forEach(function(subdimension,index){ %>
+          <div class="pantalla">
+              <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                  <% if (index == 0) { %>
+                    <p class="font-bold ml-4 titulo">SUBDIMENSIONES DE COMPROMISO:</p>
+                  <% } %> 
+                  <img class="rounded-lg ml-32 text-center" width="55%" src="<%= host %>/<%= subdimension.promedio %>" alt="">
+                  <div class="rounded-lg parrafo m-1 p-4">
+                    <p class="text-xs text-justify" style="color: #3e3e3e;">
+                      <%= subdimension.texto %>
+                    </p>
+                  </div>
+                  <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= subdimension.areas %>" alt="">
+              </div>
+          </div>
+          <div class="pantalla">
+              <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                <img class="rounded-lg m-1" width="89%" src="<%= host %>/<%= subdimension.generos %>" alt="">
+                <img class="rounded-lg m-1" width="89%" src="<%= host %>/<%= subdimension.edades   %>" alt="">
+              </div>
+          </div>
+        <% }); %>
+
+        <% individualBienestar.forEach(function(individual,index){ %>
+          <% individual.data.forEach(function(urlgrafico,indexGrafico){ %>
+              <div class="pantalla">
+                  <% if (index == 0 && indexGrafico == 0) { %>
+                      <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>5.- RESULTADOS INDIVIDUALES:</strong></p>
+                  <% } %> 
+                  <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                    <% if (index == 0 && indexGrafico == 0) { %>
+                      <p class="font-bold ml-4 titulo">SUBDIMENSIONES DE BIENESTAR PSICOLÓGICO:</p>
+                    <% } %> 
+                      <% if (indexGrafico == 0) { %>
+                        
+                          <strong class="text-lg"><%= individual.area %></strong>
+                      <% } %> 
+                      <img class="rounded-lg ml-20" width="70%" src="<%= host %>/<%= urlgrafico.usuario %>" alt="">
+
+                      <% urlgrafico.subdimensiones.forEach(function(sub,indexsub){ %>
+                        <strong class="text-lg"><%= sub.name %></strong>
+                        <div class="rounded-lg parrafo m-1 p-4">
+                          <p class="text-xs text-justify" style="color: #3e3e3e;">
+                            <%= sub.texto %>
+                          </p>
+                        </div>
+                      <% }); %>
+                      
+                  </div>
+              </div>
+          <% }); %>
+      <% }); %>
+        
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>6.- CONCLUSIONES:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            <%- conclusiones %>
+                        </p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+        
+    </body>
+</html>

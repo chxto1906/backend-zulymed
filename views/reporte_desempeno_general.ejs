@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        
+        <style>
+        @font-face {font-family: "Calibri";
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot");
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot?#iefix") format("embedded-opentype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff2") format("woff2"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff") format("woff"), 
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.ttf") format("truetype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.svg#Calibri") format("svg");
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0in;
+            margin: 0in;
+            font-family: Calibri !important;
+        }
+        .pantallainicial {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa.png");
+            background-size: cover;
+        }
+        .pantalla {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa_pantallas.png");
+            background-size: cover;
+        }
+        .titulo-inicial {
+            color: #FFF !important;
+            
+        }
+        .titulo-exclusivo {
+            color: #FFF !important;
+            
+        }
+        .titulo {
+            color: #ed7d31 !important;
+        }
+        .fondo {
+            position: relative;
+            background-color: #f5f5f5 !important;
+            width: 94% !important;
+            height: 85% !important;
+        }
+        .parrafo {
+            background-color: #FFF;
+        }
+
+        .contenedor {
+            display: table;
+        }
+
+        .contenidos {
+            display: table-row;
+        }
+
+        .columnas {
+            display: table-cell;
+        }
+        .dot {
+            height: 20px;
+            width: 20px;
+            /*background-color: #bbb;*/
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <div class="pantallainicial">
+            <p style="left: 4%; top: 56%; text-align: center;" class="absolute titulo-inicial text-3xl ">REPORTE GENERAL EVALUACIÓN DE DESEMPEÑO</p>
+            <p class="absolute titulo-exclusivo left-60 text-lg bottom-36">EXCLUSIVO PARA:</p>
+            <img width="160px" style="top: 84%;" class="absolute left-56" src="<%= host %>/<%= filepath %>" alt="">
+        </div>
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>1.- INSTRUCCIONES GENERALES:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <p class="text-sm">Interpretación de los Reportes:</p>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            La evaluación de competencias 270°, permite que los colaboradores conozcan la manera en la que es percibida la efectividad de su trabajo por parte de sus jefes, compañeros y subordinados. Este tipo de evaluación da lugar a que los empleados conozcan cuáles son sus fortalezas y cuáles son las oportunidades de mejora; todo esto, con la finalidad de construir planes de acción y aprovechar los resultados de su evaluación.
+                        </p>
+                        <br>
+                        <p class="text-sm">Criterios a Evaluar:</p>
+                        <p class="text-sm left-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Competencias:</p>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            Los cuestionarios están constituidos por diferentes comportamientos que permiten evaluar tanto competencias cardinales como específicas. Todos los comportamientos son afirmativos, de tal manera que, en la escala de calificación, cuanto más positiva sea la respuesta, más alto será el resultado final. 
+                        </p>
+                        <br>
+                        <p class="text-sm">Calificación:</p>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            Las competencias están compuestas por diferentes comportamientos que deben ser evaluados para obtener el resultado final. Los evaluadores deben calificar cada uno de los comportamientos de sus evaluados en una escala del 1 al 4, siendo 1 el 25% y 4 el 100%. El promedio de las respuestas de los evaluadores permite obtener el resultado de cada competencia evaluada.
+                        </p>
+                        <br>
+                        <%- include('tabla_opciones_respuesta'); %>
+                        <br>
+                        <br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>2.- SEMÁFORO:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <br><br>
+                        <%- include('semaforo_desempeno_general',{semaforo_cualitativas:semaforo_cualitativas}); %>
+                        <br><br><br><br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>3.- Resultado por Competencias Generales:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <br>
+                        <img class="rounded-lg ml-6" width="100%" src="<%= host %>/<%= resultadoCompetenciasGenerales %>" alt="">
+                        <br>
+                        <%- include('tabla_cualitativas',{data: cualitativas.generales}); %>
+                        <br>
+                        <%- include('semaforo_desempeno_cualitativas', {semaforo_cualitativas: semaforo_cualitativas}); %>
+                        <br><br><br><br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>4.- Resultado Global Competencias Específicas:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <br>
+                        <img class="rounded-lg ml-6" width="100%" src="<%= host %>/<%= resultadoCompetenciasEspecificas %>" alt="">
+                        <br>
+                        <%- include('tabla_cualitativas',{data: cualitativas.especificas}); %>
+                        <br>
+                        <%- include('semaforo_desempeno_cualitativas', {semaforo_cualitativas: semaforo_cualitativas}); %>
+                        <br><br><br><br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>5.- Resultados por Departamentos KPIS:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <br>
+                        
+                        <br>
+                        <%- include('tabla_desempeno_areas',{data: cuantitativas.kpis}); %>
+                        <br>
+                        <%- include('semaforo_desempeno_cualitativas', {semaforo_cualitativas: semaforo_cualitativas}); %>
+                        <br><br><br><br><br><br><br><br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-16 font-bold"><strong>6.- Resultados por Departamentos Indicadores Sociales:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <br>
+                        
+                        <br>
+                        <%- include('tabla_desempeno_areas',{data: cuantitativas.desempeno}); %>
+                        <br>
+                        <%- include('semaforo_desempeno_cualitativas', {semaforo_cualitativas: semaforo_cualitativas}); %>
+                        <br><br><br><br><br><br><br><br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <% resultadoCuantitativasAreas.forEach(function(item,indexComp){ %>
+            <div class="pantalla">
+                <% if (indexComp == 0) { %>
+                    <p class="absolute titulo left-32 text-xl top-16 font-bold"><strong>7.- Resultados por Departamentos Indicadores Sociales:</strong></p>
+                <% } %> 
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-2 p-4">
+                            <br>
+                            <img class="rounded-lg ml-6" width="100%" src="<%= host %>/<%= item.dataAreas %>" alt="">
+                            <%- include('tabla_cualitativas',{data: item}); %>
+                            <br>
+                            <%- include('semaforo_desempeno_cualitativas', {semaforo_cualitativas: semaforo_cualitativas}); %>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>8.- CONCLUSIONES:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            <%= conclusiones %>
+                        </p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

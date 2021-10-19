@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        
+        <style>
+
+        @font-face {font-family: "Calibri";
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot");
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot?#iefix") format("embedded-opentype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff2") format("woff2"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff") format("woff"), 
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.ttf") format("truetype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.svg#Calibri") format("svg");
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0in;
+            margin: 0in;
+            font-family: Calibri !important;
+        }
+        .pantallainicial {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa.png");
+            background-size: cover;
+        }
+        .pantalla {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa_pantallas.png");
+            background-size: cover;
+        }
+        .titulo-inicial {
+            color: #FFF !important;
+            
+        }
+        .titulo-exclusivo {
+            color: #FFF !important;
+            
+        }
+        .titulo {
+            color: #ed7d31 !important;
+        }
+        .fondo {
+            position: relative;
+            background-color: #f5f5f5 !important;
+            width: 94% !important;
+            height: 85% !important;
+        }
+        .parrafo {
+            background-color: #FFF;
+        }
+
+        .contenedor {
+            display: table;
+        }
+
+        .contenidos {
+            display: table-row;
+        }
+
+        .columnas {
+            display: table-cell;
+        }
+        .tabla-diagnostico{
+            border: 1px solid black;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <div class="pantallainicial">
+            <p style="left: 18.5%; top: 56%;" class="absolute titulo-inicial text-2xl ">REPORTE DIAGNÓSTICO MOTIVACIONAL</p>
+            <p class="absolute titulo-exclusivo left-60 text-lg bottom-36">EXCLUSIVO PARA:</p>
+            <img width="160px" style="top: 84%;" class="absolute left-56" src="<%= host %>/<%= filepath %>" alt="">
+        </div>
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>1.- INSTRUCCIONES GENERALES:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <strong class="text-xl">¿Cómo utilizar este reporte?</strong>
+                        <br/><br/>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                                Una vez concluido el período de Evaluación de Clima Laboral, se inició el proceso de Diagnóstico Motivacional con todo el personal de la empresa. El objetivo de esta evaluación fue indagar los factores motivacionales y fuerzas que guían el comportamiento de las personas para ajustar los planes de incentivos y recompensas que puede ofrecer la Organización a las expectativas de sus colaboradores.
+                        </p>
+                        <br/>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            De esta manera, el Diagnóstico realizado estuvo dividido en 3 fases: en primer lugar, el análisis del Perfil Motivacional de cada trabajador; posteriormente, se indagaron los factores que motivan y desmotivan a las personas dentro de la Empresa; finalmente, se midió el nivel de motivación en general que perciben las personas.
+                        </p>
+                        <br/>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            A continuación, se describirán cada uno de los constructos que fueron utilizados en los cuestionarios para medir los aspectos antes mencionados: 
+                            En el caso del Perfil Motivacional, existieron 4 posibles opciones que se detallan en la Tabla 1.
+                        </p>
+                        <br/>
+                        <p style="color: #4472c4;">Tabla 1</p>
+                        <table class="table-auto tabla-diagnostico">
+                            <thead>
+                                <tr>
+                                    <td class="text-center font-bold tabla-diagnostico" style="background-color: #9cc2e5;height: 10px;font-weight: bold;">Afiliación</td>
+                                    <td class="text-center font-bold tabla-diagnostico" style="background-color: #fd7c80;height: 10px;font-weight: bold;">Exploración</td>
+                                    <td class="text-center font-bold tabla-diagnostico" style="background-color: #f7caac;height: 10px;font-weight: bold;">Logro</td>
+                                    <td class="text-center font-bold tabla-diagnostico" style="background-color: #bfbfbf;height: 10px;font-weight: bold;">Poder</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tabla-diagnostico" style="background-color: #9cc2e5;">
+                                        <p class="text-sm text-center p-2">
+                                            Necesidad de estar con otros, recibir afecto y ser aceptado por el grupo.
+                                        </p>
+                                    </td>
+                                    <td class="tabla-diagnostico" style="background-color: #fd7c80;">
+                                        <p class="text-sm text-center p-2">
+                                            Necesidad de aprender constantemente, innovar y desarrollarse personalmente y profesionalmente.
+                                        </p>
+                                    </td>
+                                    <td class="tabla-diagnostico" style="background-color: #f7caac;">
+                                        <p class="text-sm text-center p-2">
+                                            Necesidad de establecer objetivos y superarlos, tener éxito y sentirse eficaz.
+                                        </p>
+                                        </td>
+                                    <td class="tabla-diagnostico" style="background-color: #bfbfbf;">
+                                        <p class="text-sm text-center p-2">
+                                            Necesidad de lograr cierto estatus que le permita ejercer influencia y control sobre las personas de un determinado grupo.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/><br/>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="pantalla">
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            Por otra parte, en cuanto a los Factores Motivacionales se indagaron los siguientes aspectos:
+                        </p>
+                        <br/>
+                        <p style="color: #4472c4;">Tabla 2</p>
+                        <table class="table-auto tabla-diagnostico">
+                            <thead>
+                                <tr>
+                                    <td class="text-center p-5 font-bold tabla-diagnostico" style="background-color: #bfbfbf;height: 30px;font-weight: bold;">Factores Higiénicos</td>
+                                    <td class="text-center p-5 font-bold tabla-diagnostico" style="background-color: #b4c6e7;height: 30px;font-weight: bold;">Factores Motivacionales</td>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tabla-diagnostico" style="background-color: #bfbfbf;">
+                                        <p class="text-sm text-center p-2">
+                                            Son aspectos organizacionales que deben estar presentes siempre, pero no son motivadores: sueldo, políticas, condiciones físicas, horarios, etc.
+                                        </p>
+                                    </td>
+                                    <td class="tabla-diagnostico" style="background-color: #b4c6e7;">
+                                        <p class="text-sm text-center p-2">
+                                            Son aspectos que motivan intrínsecamente a las personas: posibilidades de ascenso, capacitaciones, actividades acordes a habilidades, autonomía.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            Finalmente, para medir el nivel general de motivación se indagaron los siguientes aspectos:
+                        </p>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            <ul class="pl-4 text-sm" style="color: #3e3e3e;">
+                                <li class="text-sm" style="color: #3e3e3e;">  -   Sensación de motivación por pertenecer a la Organización.</li>
+                                <li class="text-sm" style="color: #3e3e3e;">  -   Satisfacción con las Políticas motivacionales actuales.</li>
+                                <li class="text-sm" style="color: #3e3e3e;">  -   Satisfacción con los planes y programas motivacionales establecidos en la actualidad.</li>
+                                <li class="text-sm" style="color: #3e3e3e;">  -   Motivación con las recompensas que actualmente recibe por parte de la Empresa.</li>
+                            </ul>
+                        </p>
+                        <br>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            En base al Diagnóstico realizado, se presentarán los resultados a nivel individual y general para establecer planes motivacionales que sean adaptados a perfil motivacional y a las expectativas de los colaboradores; de esta manera, los programas individuales se aplicarán en base a los resultados de las Evaluaciones de Desempeño mientras que, los incentivos generales, se aplicarán para todas las personas de la Organización.
+                        </p>
+                        <br><br><br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="pantalla">
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            A continuación, en el gráfico 1 se observa la manera en la que las personas podrán acceder al plan de incentivos que se diseñe conjuntamente con el Gerente General de la Empresa:
+                        </p>
+                        <br>
+                        <p style="color: #4472c4;">Gráfico 1</p>
+                        <img class="ml-28" width="55%" src="<%= host %>/public/graficos/diagnostico/piramide.png" alt="">
+                        <br>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            En este gráfico, se muestran cuatro estratos a los cuales los colaboradores podrán acceder para obtener diferentes planes motivacionales que sean acordados posteriormente con el Gerente General. Así, la escala 1 incluye los motivadores generales que recibirán todos los trabajadores según los resultados del Diagnóstico Motivacional e independientemente de la Evaluación de Desempeño; en el segundo estrato, se incluirán las recompensas para los colaboradores que hayan tenido un nivel de Desempeño Global del 80% en su Evaluación de Desempeño. Para acceder a las motivaciones del nivel 3, las personas deberán acumular un promedio global en su Evaluación de Desempeño del 81% al 90%; y finalmente, para acceder a planes motivacionales más completos del estrato 4, deberán superar el 91% en el resultado global de su Evaluación de Desempeño.
+                        </p>
+                        <br>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>2.- DATOS POR GRUPOS PARTICIPANTES:</strong></p>
+            <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                <img class="rounded-lg m-1" width="91.8%" src="<%= host %>/public/graficos/diagnostico/datosPorGruposGenero.svg" alt="">
+                <img class="rounded-lg m-1" width="91.8%" src="<%= host %>/public/graficos/diagnostico/datosPorGruposAntiguedad.svg" alt="">
+            </div>
+        </div>
+        <div class="pantalla">
+            <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                <img class="rounded-lg m-3" width="90%" src="<%= host %>/public/graficos/diagnostico/datosPorGruposAreas.svg" alt="">
+            </div>
+        </div>
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>3.- TOTAL GENERAL:</strong></p>
+            <div class="absolute top-24 left-4 pl-9 pt-1 fondo">
+
+                <div class="w-full contenedor">
+                    <div class="w-full contenidos">
+                        <div class="w-1/2 columnas">
+                            <strong class="text-sm">Resumen General</strong>
+                            <div class="rounded-lg parrafo pl-2 mr-3 ml-1">
+                                <strong class="text-sm pl-6 pt-8">Promedio Motivación en General</strong>
+                                <br/><br/>
+                                <strong class="text-4xl pl-20 total_compania" style="color:<%= promedioGeneral.color %>"><%= promedioGeneral.porcentaje %> %</strong>
+                                <br/>
+                                <strong class="text-lg pl-24"><%= promedioGeneral.label %></strong>
+                                <br/><br/>
+                            </div>
+                        </div>
+                        <div class="w-1/2 columnas">
+                            <strong class="text-sm">Semáforo</strong>
+                            <div class="rounded-lg parrafo pl-4 pt-2 pb-1 mr-3 ml-1">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div style="border-radius: 2px; width: 40px; height: 40px; background-color: <%= motivacion_general.satisfactorio.color %>"></div>
+                                            </td>
+                                            <td class="pl-4 text-center">
+                                                <span class="text-sm mt-0"><%= motivacion_general.satisfactorio.desde %>%  -  <%= motivacion_general.satisfactorio.hasta %>% </span>
+                                            </td>
+                                            <td class="pl-4 text-center">
+                                                <span class="text-sm mt-0"> <%= motivacion_general.satisfactorio.label %></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div style="border-radius: 2px; width: 40px; height: 40px; background-color: <%= motivacion_general.intermedio.color %>"></div>
+                                            </td>
+                                            <td class="pl-4 text-center">
+                                                <span class="text-sm mt-0"><%= motivacion_general.intermedio.desde %>% - <%= motivacion_general.intermedio.hasta %>% </span>
+                                            </td>
+                                            <td class="pl-4 text-center">
+                                                <span class="text-sm mt-0"><%= motivacion_general.intermedio.label %></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div style="border-radius: 2px; width: 40px; height: 40px; background-color: <%= motivacion_general.bajo.color %>"></div>
+                                            </td>
+                                            <td class="pl-4 text-center">
+                                                <span class="text-sm mt-0"><%= motivacion_general.bajo.desde %>% - <%= motivacion_general.bajo.hasta %>% </span>
+                                            </td>
+                                            <td class="pl-4 text-center">
+                                                <span class="text-sm mt-0"><%= motivacion_general.bajo.label %></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <img class="rounded-lg m-1" width="97%" src="<%= host %>/public/graficos/diagnostico/datosTotalGeneralAreas.svg" alt="">
+                <br/>
+                <div class="w-full contenedor">
+                    <div class="w-full contenidos">
+                        <div class="w-1/2 columnas">
+                            <div class="rounded-lg parrafo pl-4 pt-2 pb-1 mr-3 ml-1">
+                                <table>
+                                    <tbody>
+                                        <tr class="p-1">
+                                            <td>Área con Mayor Calificación</td>
+                                        </tr>
+                                        <tr class="p-1">
+                                            <td class="p-1">
+                                                <span class="p-2 rounded-lg" style="background-color: <%= dataPromedioPorAreas.mayor.color %>">
+                                                    <%= dataPromedioPorAreas.mayor.y %>%</span>
+                                                <span class="text-xs"><%= dataPromedioPorAreas.mayor.name %></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="w-1/2 columnas">
+                            <div class="rounded-lg parrafo pl-4 pt-2 pb-1 mr-3 ml-1">
+                                <table>
+                                    <tbody>
+                                        <tr class="p-1">
+                                            <td>Área con Menor Calificación</td>
+                                        </tr>
+                                        <tr class="p-1">
+                                            <td class="p-1">
+                                                <span class="p-2 rounded-lg" style="background-color: <%= dataPromedioPorAreas.menor.color %>">
+                                                    <%= dataPromedioPorAreas.menor.y %>%</span>
+                                                <span class="text-xs"><%= dataPromedioPorAreas.menor.name %></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="pantalla">
+            <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                <img class="rounded-lg m-1" width="91.8%" src="<%= host %>/public/graficos/diagnostico/datosTotalGeneralGeneros.svg" alt="">
+                <img class="rounded-lg m-1" width="91.8%" src="<%= host %>/public/graficos/diagnostico/datosTotalGeneralAntiguedades.svg" alt="">
+            </div>
+        </div>
+        <% datosIndividual.forEach(function(individual,index){ %>
+            <% individual.data.forEach(function(urlgrafico,indexGrafico){ %>
+                <div class="pantalla">
+                    <% if (index == 0 && indexGrafico == 0) { %>
+                        <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>4.- RESUMEN INDIVIDUAL POR ÁREA:</strong></p>
+                    <% } %> 
+                    <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                        <% if (indexGrafico == 0) { %>
+                            <strong class="text-xl"><%= individual.area %></strong>
+                        <% } %> 
+                        <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= urlgrafico.dataPerfilMotivacional %>" alt="">
+                        <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= urlgrafico.dataFactoresHigienicos %>" alt="">
+                    </div>
+                </div>
+                <div class="pantalla">
+                    <div class="absolute top-24 left-4 fondo pl-9 pt-1">
+                        <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= urlgrafico.dataFactoresMotivacionales %>" alt="">
+                    </div>
+                </div>
+            <% }); %>
+        <% }); %>
+        <% datosIncentivos.forEach(function(incentivo,index){ %>
+            <div class="pantalla">
+                <% if (index == 0) { %>
+                    <p class="absolute titulo left-32 text-xl top-16 font-bold"><strong>5.- INCENTIVOS, MOTIVACIONES Y DESMOTIVACIONES:</strong></p>
+                <% } %>
+                <div class="absolute top-24 left-4 pl-9 pt-1 fondo">
+                    <strong class="text-xl"><%= incentivo.area %></strong>
+                    <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= incentivo.dataIncentivosMasValora %>" alt="">
+                    <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= incentivo.dataLoQueMasMotiva %>" alt="">
+                </div>
+            </div>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 pl-9 pt-1 fondo">
+                    <strong class="text-xl"><%= incentivo.area %></strong>
+                    <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= incentivo.dataLoQueMasDesmotiva %>" alt="">
+                    <img class="rounded-lg m-1" width="90%" src="<%= host %>/<%= incentivo.dataIncentivosEspera %>" alt="">
+                </div>
+            </div>
+        <% }); %>
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>6.- CONCLUSIONES:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            <%= conclusiones %>
+                        </p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <% if (conclusiones2) { %>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-2 p-4">
+                            <p class="text-sm text-justify" style="color: #3e3e3e;">
+                                <%= conclusiones2 %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+        <% if (conclusiones3) { %>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-2 p-4">
+                            <p class="text-sm text-justify" style="color: #3e3e3e;">
+                                <%= conclusiones3 %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </body>
+</html>

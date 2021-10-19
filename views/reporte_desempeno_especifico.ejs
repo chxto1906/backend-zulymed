@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        
+        <style>
+        @font-face {font-family: "Calibri";
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot");
+            src: url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.eot?#iefix") format("embedded-opentype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff2") format("woff2"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.woff") format("woff"), 
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.ttf") format("truetype"),
+            url("http://db.onlinewebfonts.com/t/a78cfad3beb089a6ce86d4e280fa270b.svg#Calibri") format("svg");
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0in;
+            margin: 0in;
+            font-family: Calibri !important;
+        }
+        .pantallainicial {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa.png");
+            background-size: cover;
+        }
+        .pantalla {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            padding: 0in;
+            margin: 0in;
+            background-image: url("<%= host %>/public/background/background_externa_pantallas.png");
+            background-size: cover;
+        }
+        .titulo-inicial {
+            color: #FFF !important;
+            
+        }
+        .titulo-exclusivo {
+            color: #FFF !important;
+            
+        }
+        .titulo {
+            color: #ed7d31 !important;
+        }
+        .fondo {
+            position: relative;
+            background-color: #f5f5f5 !important;
+            width: 94% !important;
+            height: 85% !important;
+        }
+        .parrafo {
+            background-color: #FFF;
+        }
+
+        .contenedor {
+            display: table;
+        }
+
+        .contenidos {
+            display: table-row;
+        }
+
+        .columnas {
+            display: table-cell;
+        }
+        .dot {
+            height: 20px;
+            width: 20px;
+            /*background-color: #bbb;*/
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <div class="pantallainicial">
+            <p style="left: 10%; top: 56%;" class="absolute titulo-inicial text-3xl ">REPORTE EVALUACIÓN DE DESEMPEÑO</p>
+            <p class="absolute titulo-exclusivo left-60 text-lg bottom-36">EXCLUSIVO PARA:</p>
+            <img width="160px" style="top: 84%;" class="absolute left-56" src="<%= host %>/<%= filepath %>" alt="">
+        </div>
+        <div class="pantalla">
+            <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>1.- INSTRUCCIONES GENERALES:</strong></p>
+            <div class="absolute top-24 left-4 fondo">
+                <div class="grid grid-cols-12 gap-12 p-2">
+                    <div class="rounded-lg parrafo m-2 p-4">
+                        <p class="text-sm">Interpretación de los Reportes:</p>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            La evaluación de competencias 270°, permite que los colaboradores conozcan la manera en la que es percibida la efectividad de su trabajo por parte de sus jefes, compañeros y subordinados. Este tipo de evaluación da lugar a que los empleados conozcan cuáles son sus fortalezas y cuáles son las oportunidades de mejora; todo esto, con la finalidad de construir planes de acción y aprovechar los resultados de su evaluación.
+                        </p>
+                        <br>
+                        <p class="text-sm">Criterios a Evaluar:</p>
+                        <p class="text-sm left-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Competencias:</p>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            Los cuestionarios están constituidos por diferentes comportamientos que permiten evaluar tanto competencias cardinales como específicas. Todos los comportamientos son afirmativos, de tal manera que, en la escala de calificación, cuanto más positiva sea la respuesta, más alto será el resultado final. 
+                        </p>
+                        <br>
+                        <p class="text-sm">Calificación:</p>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            Las competencias están compuestas por diferentes comportamientos que deben ser evaluados para obtener el resultado final. Los evaluadores deben calificar cada uno de los comportamientos de sus evaluados en una escala del 1 al 4, siendo 1 el 25% y 4 el 100%. El promedio de las respuestas de los evaluadores permite obtener el resultado de cada competencia evaluada.
+                        </p>
+                        <br>
+                        <p class="text-sm left-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Metas o indicadores:</p>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            En este apartado, se evaluaron las distintas metas que cada colaborador tiene dentro de la organización, las mismas fueron proporcionadas por parte de la Empresa, y fueron evaluadas únicamente por los jefes inmediatos.
+                        </p>
+                        <br>
+                        <p class="text-sm">Calificación:</p>
+                        <p class="text-sm text-justify" style="color: #3e3e3e;">
+                            Para cada meta, hay una fórmula de cálculo, construida por los jefes inmediatos de la Empresa, así, de esta manera mediante esta fórmula, por cada indicador, se refleja un porcentaje de cumplimiento, el mismo va desde el 0% al 100%.
+                        </p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <% data.forEach(function(usuario,index){ %>
+            <div class="pantalla">
+                <% if (index == 0) { %>
+                    <p class="absolute titulo left-32 text-xl top-12 font-bold"><strong>2.- EVALUADO:</strong></p>
+                <% } %> 
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-2 p-4">
+
+                            <%- include('tabla_evaluado', {usuario: usuario}); %>
+                            <br>
+                            <p class="text-lg titulo">1. Pesos y Resultados Generales:</p>
+                            <img class="rounded-lg ml-6" width="95%" src="<%= host %>/<%= usuario.dataPonderacionFactores %>" alt="">
+                            <img class="rounded-lg ml-6" width="95%" src="<%= host %>/<%= datosPesos %>" alt="">
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-1">
+                        <div class="rounded-lg parrafo m-1 p-1">
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr class="p-0">
+                                        <td style="width: 25%; text-align: center; font-size: 12px;">
+                                            KPIS
+                                        </td>
+                                        <td class="p-0" style="width:70%;">
+                                            <img class="rounded-lg m-1" width="100%" src="<%= host %>/<%= usuario.dataBarrasUsuarioKPIS %>" alt="">                
+                                        </td>
+                                        <td style="width: 5%;">
+                                            <%= usuario.kpis.semaforo.valor + '%' %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <%- include('semaforo_desempeno_cuantitativas', {semaforo_cuantitativas: semaforo_cuantitativas}); %>
+                            <br>
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr class="p-0">
+                                        <td style="width: 25%; text-align: center; font-size: 12px;">
+                                            Desempeño Social
+                                        </td>
+                                        <td class="p-0" style="width:70%;">
+                                            <img class="rounded-lg m-1" width="100%" src="<%= host %>/<%= usuario.dataBarrasUsuarioDESEMPENO %>" alt="">                
+                                        </td>
+                                        <td style="width: 5%;">
+                                            <%= usuario.desempeno.semaforo.valor + '%' %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <%- include('semaforo_desempeno_cuantitativas', {semaforo_cuantitativas: semaforo_cuantitativas}); %>
+                            <br>
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr class="p-0">
+                                        <td style="width: 25%; text-align: center; font-size: 12px;">
+                                            Competencias Generales
+                                        </td>
+                                        <td class="p-0" style="width:70%;">
+                                            <img class="rounded-lg m-1" width="100%" src="<%= host %>/<%= usuario.dataBarrasUsuarioGENERALES %>" alt="">                
+                                        </td>
+                                        <td style="width: 5%;">
+                                            <%= usuario.generales.semaforo.valor + '%' %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <%- include('semaforo_desempeno_cualitativas', {semaforo_cualitativas: semaforo_cualitativas}); %>
+                            <br>
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr class="p-0">
+                                        <td style="width: 25%; text-align: center; font-size: 12px;">
+                                            Competencias Específicas
+                                        </td>
+                                        <td class="p-0" style="width:70%;">
+                                            <img class="rounded-lg m-1" width="100%" src="<%= host %>/<%= usuario.dataBarrasUsuarioESPECIFICAS %>" alt="">                
+                                        </td>
+                                        <td style="width: 5%;">
+                                            <%= usuario.especificas.semaforo.valor + '%' %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <%- include('semaforo_desempeno_cualitativas', {semaforo_cualitativas: semaforo_cualitativas}); %>
+                            <br>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-1 p-4">
+                            <p class="text-lg titulo">2. RESULTADO EVALUACIÓN DE INDICADORES DE DESEMPEÑO ESPECÍFICOS:</p>
+                            <br>
+                            <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= usuario.dataResultadoObtenidoKpis %>" alt="">
+                            <br>
+                            <%- include('semaforo_desempeno_cuantitativas', {semaforo_cuantitativas: semaforo_cuantitativas}); %>
+                            <br>  
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-1 p-4">
+                            <br>
+                            <%- include('tabla_cuantitativas',{data: usuario.kpis}); %>
+                            <br>
+                            <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= usuario.dataBarraCumplimientoKpis %>" alt="">
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-1 p-4">
+                            <p class="text-lg titulo">3. RESULTADO DESEMPEÑO SOCIAL:</p>
+                            <br>
+                            <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= usuario.dataResultadoObtenidoDesempeno %>" alt="">
+                            <br>
+                            <%- include('semaforo_desempeno_cuantitativas', {semaforo_cuantitativas: semaforo_cuantitativas}); %>
+                            <br>  
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-1 p-4">
+                            <br>  
+                            <%- include('tabla_cuantitativas',{data: usuario.desempeno}); %>
+                            <br>
+                            <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= usuario.dataBarraCumplimientoDesempeno %>" alt="">
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-1 p-4">
+                            <p class="text-lg titulo">4. PROMEDIO EVALUACIÓN DE COMPETENCIAS GENERALES:</p>
+                            <br>
+                            <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= usuario.dataResultadoObtenidoGenerales %>" alt="">
+                            <%- include('semaforo_desempeno_cualitativas', {semaforo_cualitativas: semaforo_cualitativas}); %>
+                            <br>
+                            <%- include('tabla_cualitativas',{data: usuario.generales}); %>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-1 p-4">
+                            <p class="text-lg titulo">4.1 COMPETENCIAS GENERALES POR EVALUADOR:</p>
+                            <br>
+                            <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= usuario.dataResultadoObtenidoGeneralesPorEvaluador %>" alt="">
+                            <br>
+                            <%- include('tabla_cualitativas_generales_evaluador',{resultado: usuario.jefesParesSubordinados.resultado,headers: usuario.jefesParesSubordinados.headers}); %>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+            <% usuario.dataResultadoObtenidoGeneralesPorCompetenciaGeneral.forEach(function(item,indexComp){ %>
+                <div class="pantalla">
+                    <div class="absolute top-24 left-4 fondo">
+                        <div class="grid grid-cols-12 gap-12 p-2">
+                            <div class="rounded-lg parrafo m-1 p-4">
+                                <% if (indexComp == 0) { %>
+                                    <p class="text-lg titulo">4.2 RESULTADOS DETALLADOS POR COMPETENCIA CARDINAL:</p>
+                                <% } %> 
+                                <br>
+                                <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= item.dataResultadoCompetenciaTotal %>" alt="">
+                                <br>
+                                <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= item.dataResultadoCompetencia %>" alt="">
+                                <br>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            <% }); %>
+
+
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-1 p-4">
+                            <p class="text-lg titulo">5. PROMEDIO EVALUACIÓN DE COMPETENCIAS ESPECIFÍCAS:</p>
+                            <br>
+                            <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= usuario.dataResultadoObtenidoEspecificas %>" alt="">
+                            <%- include('semaforo_desempeno_cualitativas', {semaforo_cualitativas: semaforo_cualitativas}); %>
+                            <br>
+                            <%- include('tabla_cualitativas',{data: usuario.especificas}); %>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="pantalla">
+                <div class="absolute top-24 left-4 fondo">
+                    <div class="grid grid-cols-12 gap-12 p-2">
+                        <div class="rounded-lg parrafo m-1 p-4">
+                            <p class="text-lg titulo">5.1 COMPETENCIAS ESPECÍFICAS POR EVALUADOR:</p>
+                            <br>
+                            <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= usuario.dataResultadoObtenidoEspecificasPorEvaluador %>" alt="">
+                            <br>
+                            <%- include('tabla_cualitativas_especificas_evaluador',{resultado: usuario.jefesParesSubordinados.resultado,headers: usuario.jefesParesSubordinados.headers}); %>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+            <% usuario.dataResultadoObtenidoEspecificasPorCompetenciaGeneral.forEach(function(item,indexComp){ %>
+                <div class="pantalla">
+                    <div class="absolute top-24 left-4 fondo">
+                        <div class="grid grid-cols-12 gap-12 p-2">
+                            <div class="rounded-lg parrafo m-1 p-4">
+                                <% if (indexComp == 0) { %>
+                                    <p class="text-lg titulo">5.2 RESULTADOS DETALLADOS POR COMPETENCIA CARDINAL:</p>
+                                <% } %> 
+                                <br>
+                                <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= item.dataResultadoCompetenciaTotal %>" alt="">
+                                <br>
+                                <img class="rounded-lg m-0" width="100%" src="<%= host %>/<%= item.dataResultadoCompetencia %>" alt="">
+                                <br>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            <% }); %>
+
+            
+        <% }); %>
+    </body>
+</html>

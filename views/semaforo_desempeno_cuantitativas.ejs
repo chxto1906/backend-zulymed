@@ -1,0 +1,40 @@
+<html>
+    <style>
+        .dot {
+            height: 20px;
+            width: 20px;
+            /*background-color: #bbb;*/
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+    <tbody>
+        <table style="border-radius: 1em;width: 96%; margin-left: 10px; margin-right: 10px;">
+            <tbody>
+                <tr class="pl-2 pr-2 pt-0 pb-0">
+                    <td class="p-3" style="background-color: #f6f7f6; width: 25%; text-align: center;">
+                        <div class="dot" style="background-color: <%= semaforo_cuantitativas.deficiente.color %>"></div>
+                        <p style="font-size: 10px;color: <%= semaforo_cuantitativas.deficiente.color %>"><%= semaforo_cuantitativas.deficiente.desde + '%' + ' - ' + semaforo_cuantitativas.deficiente.hasta %></p>
+                        <p style="font-size: 10px;"><%= semaforo_cuantitativas.deficiente.label %></p>
+                    </td>
+                    <td class="p-3" style="background-color: #f6f7f6; width: 25%;text-align: center;">
+                        <div class="dot" style="background-color: <%= semaforo_cuantitativas.regular.color %>"></div>
+                        <p style="font-size: 10px;color: <%= semaforo_cuantitativas.regular.color %>"><%= semaforo_cuantitativas.regular.desde + '%' + ' - ' + semaforo_cuantitativas.regular.hasta %></p>
+                        <p style="font-size: 10px;"><%= semaforo_cuantitativas.regular.label %></p>
+                    </td>
+                    <td class="p-3" style="background-color: #f6f7f6; width: 25%;text-align: center;">
+                        <div class="dot" style="background-color: <%= semaforo_cuantitativas.bueno.color %>"></div>
+                        <p style="font-size: 10px;color: <%= semaforo_cuantitativas.bueno.color %>"><%= semaforo_cuantitativas.bueno.desde + '%' + ' - ' + semaforo_cuantitativas.bueno.hasta %></p>
+                        <p style="font-size: 10px;"><%= semaforo_cuantitativas.bueno.label %></p>
+                    </td>
+                    <td class="p-3" style="background-color: #f6f7f6; width: 25%;text-align: center;">
+                        <div class="dot" style="background-color: <%= semaforo_cuantitativas.optimo.color %>"></div>
+                        <p style="font-size: 10px;color: <%= semaforo_cuantitativas.optimo.color %>"><%= semaforo_cuantitativas.optimo.desde + '%' + ' - ' + semaforo_cuantitativas.optimo.hasta %></p>
+                        <p style="font-size: 10px;"><%= semaforo_cuantitativas.optimo.label %></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </tbody>
+</html>

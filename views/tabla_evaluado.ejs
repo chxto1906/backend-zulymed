@@ -1,0 +1,90 @@
+<html>
+    <style>
+        .title-head {
+            color: #FFFFFF;
+            background-color: #265b86;
+            height: 10px;
+            font-size: 9px;
+            font-weight: bold;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .rows-body {
+            text-align: center; 
+            font-size: 9px;
+            margin: 0px;
+            padding: 0px;
+        }
+        .table-zebra {
+            border: 1px solid #373737;
+            border-collapse: collapse;
+        }
+    </style>
+    <body>
+        <table class="table-zebra" style="width: 100%;">
+            <thead>
+                <tr class="head-desempeno table-zebra">
+                    <th colspan="4" class="title-head table-zebra">DATOS DEL EVALUADO</th>
+                </tr>
+                <tr class="head-desempeno table-zebra">
+                    <th class="title-head table-zebra">NOMBRE EVALUADO</th>
+                    <th class="title-head table-zebra">CARGO</th>
+                    <th class="title-head table-zebra">DEPARTAMENTO</th>
+                    <th class="title-head table-zebra">TIEMPO EN EMPRESA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="p-0 rows-zebra">
+                    <td class="rows-body table-zebra">
+                        <%= usuario.evaluador.nombreUsuario %>
+                    </td>
+                    <td class="rows-body table-zebra">
+                        <%= usuario.evaluador.nombreCargo %>
+                    </td>
+                    <td class="rows-body table-zebra">
+                        <%= usuario.evaluador.nombreDepartamento %>
+                    </td>
+                    <td class="rows-body table-zebra">
+                        <%= usuario.evaluador.tiempo %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table class="table-zebra" style="width: 100%;">
+            <thead>
+                <tr class="head-desempeno table-zebra">
+                    <th colspan="4" class="title-head table-zebra">DATOS DE LA EVALUACIÓN PERIODO <%= usuario.evaluador.periodo %></th>
+                </tr>
+                <tr class="head-desempeno table-zebra">
+                    <th colspan="2" class="title-head table-zebra">CUANTITATIVAS</th>
+                    <th colspan="2" class="title-head table-zebra">CUALITATIVAS</th>
+                </tr>
+                <tr class="head-desempeno table-zebra">
+                    <th class="title-head table-zebra">NOMBRE EVALUADORES</th>
+                    <th class="title-head table-zebra">CARGO EVALUADORES</th>
+                    <th class="title-head table-zebra">NOMBRE EVALUADORES</th>
+                    <th class="title-head table-zebra">CARGO EVALUADORES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="p-0 rows-zebra">
+                    <td style="width: 25%;" class="rows-body table-zebra">
+                        <%= usuario.evaluador.nombreEvaluadoresCuantitativas %>
+                    </td>
+                    <td style="width: 25%;" class="rows-body table-zebra">
+                        <%= usuario.evaluador.cargosEvaluadoresCuantitativas %>
+                    </td>
+                    <td style="width: 25%;" class="rows-body table-zebra">
+                        <%= usuario.evaluador.nombreEvaluadoresCualitativas %>
+                    </td>
+                    <td style="width: 25%;" class="rows-body table-zebra">
+                        <%= usuario.evaluador.cargosEvaluadoresCualitativas %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+    <style>
+        .title-head {
+            color: #FFFFFF;
+            background-color: #265b86;
+            height: 10px;
+            font-size: 9px;
+            font-weight: bold;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .rows-body {
+            text-align: center; 
+            font-size: 9px;
+            margin: 0px;
+            padding: 0px;
+        }
+        .table-zebra {
+            border: 1px solid #373737;
+            border-collapse: collapse;
+        }
+    </style>
+    <body>
+        <table class="table-zebra" style="width: 100%;">
+            <thead>
+                <tr class="head-desempeno table-zebra">
+                    <th class="title-head table-zebra">INDICADOR DE DESEMPEÑO</th>
+                    <th class="title-head table-zebra">PESO</th>
+                    <th class="title-head table-zebra">META</th>
+                    <th class="title-head table-zebra">RESULTADO</th>
+                    <th class="title-head table-zebra">% PONDERACIÓN</th>
+                    <th class="title-head table-zebra">% CUMPLIMIENTO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.items.forEach(function(item,index){ %>
+                    <tr class="p-0 rows-zebra">
+                        <td class="rows-body table-zebra">
+                            <%= item.indicador %>
+                        </td>
+                        <td class="rows-body table-zebra">
+                            <%= item.peso + '%' %>
+                        </td>
+                        <td class="rows-body table-zebra">
+                            <%= item.meta %>
+                        </td>
+                        <td class="rows-body table-zebra">
+                            <%= item.result %>
+                        </td>
+                        <td class="rows-body table-zebra">
+                            <%= item.ponderado + '%' %>
+                        </td>
+                        <td class="rows-body table-zebra">
+                            <%= item.cumplimiento + '%' %>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+            <tfoot>
+                <tr class="head-desempeno table-zebra">
+                    <td class="title-head table-zebra"></td>
+                    <td class="title-head table-zebra">100%</td>
+                    <td class="title-head table-zebra"></td>
+                    <td class="title-head table-zebra"></td>
+                    <td class="title-head table-zebra"><%= data.semaforo.valor + '%' %></td>
+                    <td class="title-head table-zebra"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

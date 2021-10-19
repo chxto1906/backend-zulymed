@@ -1,0 +1,61 @@
+<html>
+    <style scoped>
+        .dot2 {
+            height: 60px;
+            width: 60px;
+            /*background-color: #bbb;*/
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+        }
+        tr.zebr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+    <tbody>
+        <table style="border-radius: 1em;width: 96%; margin-left: 10px; margin-right: 10px;">
+            <tbody>
+                <tr class="zebr pl-2 pr-2 pt-0 pb-0">
+                    <td class="p-3" style="width: 25%; text-align: center;">
+                        <div class="dot2" style="background-color: <%= semaforo_cualitativas.deficiente.color %>"></div>
+                    </td>
+                    <td class="p-3" style="width: 75%;">
+                        <p style="font-size: 16px;font-weight: 900; color: <%= semaforo_cualitativas.deficiente.color %>"><%= semaforo_cualitativas.deficiente.desde + '%' + ' - ' + semaforo_cualitativas.deficiente.hasta %></p>
+                        <p style="font-size: 16px;font-weight: 900;"><%= semaforo_cualitativas.deficiente.label %></p>
+                        <p style="font-size: 14px;">No se evidencian los comportamientos esperados en sus acciones en el día a día.</p>
+                    </td>
+                </tr>
+                <tr class="zebr pl-2 pr-2 pt-0 pb-0">
+                    <td class="p-3" style="width: 25%;text-align: center;">
+                        <div class="dot2" style="background-color: <%= semaforo_cualitativas.regular.color %>"></div>
+                    </td>
+                    <td class="p-3" style="width: 75%; ">
+                        <p style="font-size: 16px;color: <%= semaforo_cualitativas.regular.color %>"><%= semaforo_cualitativas.regular.desde + '%' + ' - ' + semaforo_cualitativas.regular.hasta %></p>
+                        <p style="font-size: 16px;"><%= semaforo_cualitativas.regular.label %></p>
+                        <p style="font-size: 14px;">No se evidencian los comportamientos esperados en sus acciones en el día a día.</p>
+                    </td>
+                </tr>
+                <tr class="zebr pl-2 pr-2 pt-0 pb-0">
+                    <td class="p-3" style="width: 25%;text-align: center;">
+                        <div class="dot2" style="background-color: <%= semaforo_cualitativas.bueno.color %>"></div>
+                    </td>
+                    <td class="p-3" style="width: 75%; ">
+                        <p style="font-size: 16px;color: <%= semaforo_cualitativas.bueno.color %>"><%= semaforo_cualitativas.bueno.desde + '%' + ' - ' + semaforo_cualitativas.bueno.hasta %></p>
+                        <p style="font-size: 16px;"><%= semaforo_cualitativas.bueno.label %></p>
+                        <p style="font-size: 14px;">No se evidencian los comportamientos esperados en sus acciones en el día a día.</p>
+                    </td>
+                </tr>
+                <tr class="zebr pl-2 pr-2 pt-0 pb-0">
+                    <td class="p-3" style="width: 25%;text-align: center;">
+                        <div class="dot2" style="background-color: <%= semaforo_cualitativas.excelente.color %>"></div>
+                    </td>
+                    <td class="p-3" style="width: 75%; ">
+                        <p style="font-size: 16px;color: <%= semaforo_cualitativas.excelente.color %>"><%= semaforo_cualitativas.excelente.desde + '%' + ' - ' + semaforo_cualitativas.excelente.hasta %></p>
+                        <p style="font-size: 16px;"><%= semaforo_cualitativas.excelente.label %></p>
+                        <p style="font-size: 14px;">No se evidencian los comportamientos esperados en sus acciones en el día a día.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </tbody>
+</html>

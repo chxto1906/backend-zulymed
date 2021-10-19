@@ -1,0 +1,99 @@
+<html>
+    <style>
+        .title-head {
+            color: #FFFFFF;
+            background-color: #265b86;
+            height: 10px;
+            font-size: 9px;
+            font-weight: bold;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .rows-body {
+            text-align: center; 
+            font-size: 9px;
+            margin-top: -11px;
+            padding: 2px;
+            height: 20px;
+            margin-right: 1px;;
+        }
+        .table-zebra {
+            border: 1px solid #373737;
+            border-collapse: collapse;
+        }
+
+
+
+
+    .progress-bar {
+        border-radius: 0px;
+        overflow: hidden;
+        width: 99%;
+    }
+
+    span {
+            display: block;
+        }
+
+    .bar {
+        background: #eef1f3;
+    }
+
+    .progress {
+        color: #fff;
+        padding: 7px;
+    }
+
+    .progress-bar {
+        top: 3px;
+        right: 2px;
+        left: 2px;
+        max-width: 100%;
+        position: absolute;
+        transform: translate3d(-50%,-50%,0);
+    }
+
+
+    </style>
+    <body>
+        <table class="table-zebra" style="width: 100%;">
+            <thead>
+                <tr class="head-desempeno table-zebra">
+                    <th class="title-head table-zebra">Competencia</th>
+                    <th class="title-head table-zebra">Resultado obtenido</th>
+                    <th class="title-head table-zebra"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.items.forEach(function(item,index){ %>
+                    <tr class="p-0 rows-zebra">
+                        <td class="rows-body table-zebra" style="width: 25%;">
+                            <%= item.competencia %>
+                        </td>
+                        <td class="rows-body table-zebra" style="position: relative; width: 70%;">
+                            <div class="progress-bar">
+                                <span class="bar">
+                                  <span class="progress" style="width: <%= item.cumplimiento + '%' %>;background: <%= item.semaforo.color %>;"></span>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="rows-body table-zebra" style="width: 5%;">
+                            <%= item.cumplimiento + '%' %>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+            <%if (data.semaforo > 0) { %>
+                <tfoot>
+                    <tr class="head-desempeno table-zebra">
+                        <td class="title-head table-zebra">TOTAL</td>
+                        <td class="title-head table-zebra"></td>
+                        <td class="title-head table-zebra"><%= data.semaforo.valor + '%' %></td>
+                    </tr>
+                </tfoot>
+            <% } %>
+        </table>
+    </body>
+</html>
